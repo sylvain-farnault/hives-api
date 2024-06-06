@@ -1,24 +1,97 @@
-# README
+# HIVES API Documentation
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Base PATH
 
-Things you may want to cover:
+The base path for accessing the API is: `/api/v1/hives`
 
-* Ruby version
+## Authentication
 
-* System dependencies
+TODO ?
 
-* Configuration
+## Basic Operations
 
-* Database creation
+### Create Hive
+- **HTTP Verb:** POST
+- **URL path:** `/`
+- **Body Example:**
+  ```json
+	{ 
+		"hive": { 
+			"name": "My demo hive", 
+			"weight": 15000, 
+			"user_id": 1 
+		}
+	}
+  ```
+- **Success Response example:**
 
-* Database initialization
+  Status: 201 (Created)
+  ```json
+  {
+		"id": 1,
+		"name": "My demo hive", 
+		"weight": 15000, 
+		"user_id": 1,
+		"created_at": "2024-06-06T11:49:35.490Z",
+		"updated_at": "2024-06-06T11:49:35.490Z"
+  }
+  ```
 
-* How to run the test suite
+### Get all Hives
 
-* Services (job queues, cache servers, search engines, etc.)
+- **HTTP Verb :** GET
+- **URL :** `/`
+- **Success response example**
 
-* Deployment instructions
+  Status: 200 (OK)
+  ```json
+	[
+		{
+			"id": 1,
+			"name": "My demo hive", 
+			"weight": 15000, 
+			"user_id": 1,
+			"created_at": "2024-06-06T11:49:35.490Z",
+			"updated_at": "2024-06-06T11:49:35.490Z"
+		},
+		{
+			"..."
+		}
+	]
+  ```
 
-* ...
+### Get a given Hive by his ID
+
+- **HTTP Verb :** GET
+- **URL :** `/:id`
+- **Success response example**
+
+  Status: 200 (OK)
+  ```json
+  {
+		"id": 1,
+		"name": "My demo hive", 
+		"weight": 15000, 
+		"user_id": 1,
+		"created_at": "2024-06-06T11:49:35.490Z",
+		"updated_at": "2024-06-06T11:49:35.490Z"
+  }
+	```
+
+- **Error message if you provide a bad ID**
+
+	Example if providing id `14` that does not match any record in the database:
+
+	Status Code: 404 (Not Found)
+	```json
+	{
+		"error": "Couldn't find Hive with 'id'=14"
+	}
+	```
+
+# Frontend application
+Here is a VueJS app using this API
+
+_A link to the GitHub repository is coming..._
+
+

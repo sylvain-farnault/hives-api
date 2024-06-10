@@ -18,7 +18,7 @@ class Api::V1::HivesController < ApplicationController
     if @hive.save
       render json: @hive, status: :created
     else
-      render json: @hive.errors, status: :unprocessable_entity
+      render json: { errors: @hive.errors }, status: :unprocessable_entity
     end
   end
 

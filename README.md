@@ -1,5 +1,8 @@
 # HIVES API Documentation
 
+## Url production
+Api is live on Scalingo: https://sylvain-hive-api.osc-fr1.scalingo.io/
+
 ## Base PATH
 
 The base path for accessing the API is: `/api/v1/hives`
@@ -32,6 +35,21 @@ The base path for accessing the API is: `/api/v1/hives`
 		"updated_at": "2024-06-06T11:49:35.490Z"
   }
   ```
+- **If providing a name under 6 characters**
+
+	API will give a response as follow:
+
+	Status: 422 (Unprocessable Content)
+	```json
+	{
+    "errors": {
+        "name": [
+            "is too short (minimum is 6 characters)"
+        ]
+    }
+	}
+
+	```
 
 ### Get all Hives
 

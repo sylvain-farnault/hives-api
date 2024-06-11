@@ -1,4 +1,3 @@
 class Hive < ApplicationRecord
-
-  validates :name, length: { minimum: 6 }
+  validates :name, presence: true, length: { minimum: 6 }
 end

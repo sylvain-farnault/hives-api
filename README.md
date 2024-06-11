@@ -4,10 +4,6 @@
 
 The base path for accessing the API is: `/api/v1/hives`
 
-## Authentication
-
-TODO ?
-
 ## Basic Operations
 
 ### Create Hive
@@ -90,8 +86,8 @@ TODO ?
 	```
 
 # Frontend application
-Here is a VueJS app using this API
+Here is a VueJS app using this API running on Scalingo
 
-_A link to the GitHub repository is coming..._
+[https://github.com/sylvain-farnault/hives-frontend](https://github.com/sylvain-farnault/hives-frontend)
 
 
